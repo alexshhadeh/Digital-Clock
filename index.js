@@ -37,6 +37,7 @@ class Clock {
         minutes = (minutes < 10) ? '0' + minutes : minutes;
         seconds = (seconds < 10) ? '0' + seconds : seconds;
         
+        let pre12hour = hour;
         //Check if user wants the 12-hour clock and convert
         if(document.getElementById("clockType").checked) {
             hour = (hour > 12) ? hour - 12 : hour;
@@ -48,7 +49,7 @@ class Clock {
         document.getElementById('hours').innerHTML = hour + ' :&nbsp';
         document.getElementById('minutes').innerHTML = minutes + ' :&nbsp';
         document.getElementById('seconds').innerHTML = seconds +'&nbsp';
-        document.getElementById('timeOfDay').innerHTML = document.getElementById("clockType").checked ? (hour > 12) ? "AM" : "PM" : "";
+        document.getElementById('timeOfDay').innerHTML = document.getElementById("clockType").checked ? ((pre12hour > 12) ? "PM" : "AM") : "";
         document.getElementById('day').innerHTML = day + ',&nbsp';
         document.getElementById('month').innerHTML =  month + '&nbsp';
         document.getElementById('date').innerHTML = date;
