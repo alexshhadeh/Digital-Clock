@@ -49,7 +49,7 @@ class Clock {
         document.getElementById('hours').innerHTML = hour + ' :&nbsp';
         document.getElementById('minutes').innerHTML = minutes + ' :&nbsp';
         document.getElementById('seconds').innerHTML = seconds +'&nbsp';
-        document.getElementById('timeOfDay').innerHTML = document.getElementById("clockType").checked ? ((pre12hour > 12) ? "PM" : "AM") : "";
+        document.getElementById('timeOfDay').innerHTML = document.getElementById("clockType").checked ? ((pre12hour > 12 || pre12hour == 0) ? "PM" : "AM") : "";
         document.getElementById('day').innerHTML = day + ',&nbsp';
         document.getElementById('month').innerHTML =  month + '&nbsp';
         document.getElementById('date').innerHTML = date;
