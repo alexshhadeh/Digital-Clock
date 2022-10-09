@@ -3,15 +3,15 @@ class Clock {
         this.today = new Date();
     }
     setTime(time) {
-        this.today = time ? time : new Date()
+        window.sessionStorage.setItem('miliseconds', (time - this.today.getTime()))
+        //this.today = time ? time : new Date()
     }
     getTime() {
         return this.today;
     }
     update() {
         //Set time so that the time added by user isn't being added every time the interval resets
-        this.setTime()
-
+        this.today = new Date();
         //Check if user added time before, if not set to 0
         if (isNaN(parseInt(window.sessionStorage.getItem('miliseconds'))))
             window.sessionStorage.setItem('miliseconds', 0);
@@ -77,6 +77,10 @@ class Clock {
 }
 
 const clock = new Clock();
+
+//Set time to Thu Mar 22 2012 09:11:22 GMT+0100 (Central European Standard Time)
+//UNCOMMENT LINE BELOW TO SET THE TIME
+//clock.setTime(1332403882588);
 
 setInterval(() => {
     clock.update();
