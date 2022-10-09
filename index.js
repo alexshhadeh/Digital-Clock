@@ -80,7 +80,7 @@ const clock = new Clock();
 
 //Set time to Thu Mar 22 2012 09:11:22 GMT+0100 (Central European Standard Time)
 //UNCOMMENT LINE BELOW TO SET THE TIME
-clock.setTime(1332403882588);
+//clock.setTime(1332403882588);
 
 setInterval(() => {
     clock.update();
